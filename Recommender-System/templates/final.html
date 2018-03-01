@@ -1,0 +1,17 @@
+{% extends "header.html" %}
+
+{% block body %}
+<div style="opacity:0.7; margin-top: 1cm;">
+    <ul class="list-group">
+      <li class="list-group-item"><b>Recommended Show name (Personalized Recommendation)</b></li>
+     {%if d|length == 0%}
+      		<li class="list-group-item">Sorry No data available</li>
+     {%else%}
+     	{% for i in d %}
+        	<li class="list-group-item">{{i}}</li>
+     	{% endfor %}
+     {%endif%}
+    </ul>
+</div>
+ <form action="/dashboard"><input type="Submit" class="btn btn-primary btn-lg" value="Go to Dashboard"/></form>
+{%endblock%}

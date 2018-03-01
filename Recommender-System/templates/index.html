@@ -1,0 +1,13 @@
+{% extends "header.html" %}
+
+{% block body %}
+<div style="margin-top:1cm; opacity:0.7;">
+    <ul class="list-group" >
+      <li class="list-group-item"><span class="badge">Rank</span><b>Popular Show name</b></li>
+     	{% for i in l %}
+        	<li class="list-group-item"><span class="badge">{{i[1]}}</span>{{i[0]}}</li>
+     	{% endfor %}
+    </ul>
+</div>
+
+{%endblock%}

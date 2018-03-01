@@ -1,0 +1,31 @@
+{% extends "header.html" %}
+
+{% block body %}
+<div class="container">
+<center><p style="color:white; font-size: 30px">Welcome<text style="color:red;"> {{name}}</text></p></center>
+</div>
+<div class="container" >
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    <form role="form" method=post action="/dashboard/result/">
+      <h2 style="color:white;">Enter Show name</h2>
+      <hr class="colorgraph">
+      <div class="form-group">
+        <input type="text" name="show" id="show" class="form-control input-lg" placeholder="Type a Show name" value="{{request.form.show}}" tabindex="1">
+      </div>
+      <hr class="colorgraph">
+      <div class="row">
+        <center><div style="color:black;">
+          <p style="color:white;">You have added {{x}} show for recommendation</p>
+          <br><input type="submit" value="Submit" class="btn btn-primary btn-lg" tabindex="3"></div></center>
+      </div>
+    </form> 
+    <form role="form" method=post action="/dashboard/final/">
+      <div class="row" style="margin-top: 1cm;">
+        <center><div><input style="background-color: green;" type="submit" value="Recommend" class="btn btn-primary btn-lg" tabindex="3"></div></center>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+{%endblock%}

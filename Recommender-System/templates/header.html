@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Watch Anime - A anime recommender</title>
+	<meta name="viewport" content="width=device-width,initial-space=1">
+	<link href="{{ url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet"> 
+	<link rel="shortcut icon" href="{{ url_for('static',filename='icon.jpg')}}">
+	
+</head>
+<header style="background-color:#ced3c6;">
+	<div class="navbar-header">
+	</div>
+	<div class="container-fluid">
+		<ul class="nav navbar-nav navbar-left">
+			<img style="max-height: 50px; " src="{{url_for('static', filename='re.png')}}">
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<div style="margin-right:10px; margin-left:15px; margin-top:5px; margin-bottom:5px;" class="container-fluid">
+				<h5>
+				{% if session.logged_in %}
+				<a href="/"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>Home</a>&nbsp;&nbsp;
+				<a href="/dashboard"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Dashboard </a>&nbsp;&nbsp;	
+				<a href="/logout/"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</button></a>
+
+				{% else %}
+
+				<a href="/"><span class="glyphicon glyphicon-off"></span>&nbsp;Home</a>&nbsp;&nbsp;	
+				<a href="/login/"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Login</button></a>&nbsp;&nbsp;
+				<a href="/register/"><span class="glyphicon glyphicon-edit"></span>&nbsp;Register</button></a>
+				{% endif %}
+			</h5>
+		</div>
+	</ul>
+	</div>
+</header>
+<body style="background-image:url('{{ url_for('static',filename='41.jpg')}}');  background-size: 100% ;">
+	<div class="container-fluid" style="min-height:100%;">
+	{% block body %}{% endblock %}
+	</div>
+	
+	
+	<footer class="footer">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+        <center><p style="color:white;">&copy; copyright 2017</p></center>
+      </footer>
+	<script type="text/javascript" src ="{{url_for('static',filename='js/jquery-3.2.1.min.js')}}"></script>
+	<script type="text/javascript" src ="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+	
+</body>
+</html>

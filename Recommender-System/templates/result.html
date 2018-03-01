@@ -1,0 +1,17 @@
+{% extends "header.html" %}
+
+{% block body %}
+<div style="opacity:0.7; margin-top: 1cm;">
+    <ul class="list-group" >
+      <li class="list-group-item"><span class="badge">Show ID</span><b>Show name</b></li>
+     {%if d|length == 0%}
+      		<li class="list-group-item">Sorry No data available</li>
+     {%else%}
+     	{% for i in d %}
+        	<li class="list-group-item"><span class="badge">{{i[1]}}</span><form action='/dashboard/receiver/' method="POST"><button name="btn" class="btn btn primary btn-small" style="background-color: blue;" type="submit" value={{i[1]}}>Add</button>&nbsp;&nbsp;{{i[0]}}</form></li>
+     	{% endfor %}
+     {%endif%}
+    </ul>
+</div>
+ <form action="/dashboard"><input type="Submit" class="btn btn-primary btn-lg" value="Go Back to Add More"/></form>
+{%endblock%}
